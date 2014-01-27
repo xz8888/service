@@ -1,0 +1,2 @@
+class RepairCodesController < ApplicationController
+end

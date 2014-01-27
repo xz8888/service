@@ -1,0 +1,59 @@
+<div ng-controller="SearchCtrl">
+	<form class="sidebar-search form-vertical row-border">
+		<div class="input-box">
+			<button type="submit" class="submit">
+				<i class="fa fa-search"></i>
+			</button>
+			<span>
+				<input type="text" placeholder="Search Ticket">
+			</span>
+		</div>
+	
+	    <div class="form-group">
+	    	<label class=" control-label">Status: </label>
+	  
+			<select multiple="multiple" ng-model="conditions.status" multiple ng-multiple="true" class="form-control" id="status" >
+				<option value="any">Any</option>
+				<option value="new">New</option>
+				<option value="open"  >Open</option>
+				<option value="progress">Progress</option>
+				<option value="closed">Closed</option>
+				<option value="cancel">Cancel</option>
+			</select>
+		
+		</div>
+	    
+		<!-- Department block -->
+		<div class="form-group">
+			<label class="control-label">Departments:</label>
+			<select class="form-control" multiple ng-multiple="true" ng-model="conditions.departments" ng-options="d.department_name  for d in departments" required />
+				<option value="">Any</option>
+			</select>
+			
+		</div>
+
+	
+	    <!-- Reporter Block-->
+		<div class="form-group">
+			<label class=" control-label">Reporter: </label>
+				<select class="form-control" multiple multiple="true" ng-model="conditions.reporters" ng-options="(d.first_name + ' ' + d.last_name) for d in users">
+					<option value="">Any</option>
+			    </select>
+		</div>
+
+	
+			<!-- Assignee Block -->
+		<div class="form-group">
+			<label class="control-label">Assignee: </label>
+			<select class="form-control" multiple multiple="true" ng-model="conditions.assignees" ng-options="(d.first_name + ' ' + d.last_name) for d in users">
+					<option value="">Any</option>
+			 </select>
+		</div>
+        
+        <div class="form-group">
+			<button class="btn btn-info" ng-click="search()">Search</button>
+		</div>
+	</form>
+</div>
+
+				

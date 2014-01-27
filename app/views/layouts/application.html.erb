@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <title>Service</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  	<script>
+	$(document).ready(function(){
+		"use strict";
+
+		App.init(); // Init layout and core plugins
+		Plugins.init(); // Init all plugins
+		FormComponents.init(); // Init all form-specific plugins
+	});
+	</script>
+</head>
+<body>
+
+<% if notice %>
+  <p class="alert alert-notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
+<%= render 'layouts/header' %>
+
+<div id="container" >
+	<div id="sidebar" class="sidebar-fixed">
+		<div id="sidebar-content">
+			<%= render 'layouts/sidebar/search' %>
+			<%= render 'layouts/sidebar/navigation' %>
+			<%= render 'layouts/sidebar/notification' %>
+		</div>
+
+		<div id="divider" class="resizeable"></div>
+	</div>
+   
+    <div id="content">
+		<div class="container">
+			<%= render 'layouts/elements/breadcrumb' %>
+	        <ng-view>
+	        </ng-view>
+		</div>
+	</div>
+</div>
+
+<%= yield %>
+
+
+</body>
+</html>
