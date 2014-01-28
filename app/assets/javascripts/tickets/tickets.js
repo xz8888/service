@@ -18,8 +18,8 @@ ticketApp.config(function($routeProvider, $locationProvider) {
 
 //config the header
 ticketApp.config(["$httpProvider",
-    function(provider) {
-        provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+    function($httpProvider) {
+        $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
     }
 ]);
 
