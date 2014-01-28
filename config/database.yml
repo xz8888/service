@@ -34,8 +34,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: service_production
+  database: service
   pool: 5
-  username: root
-  password:
+  username: service
+  password: heys56service
   host: localhost
