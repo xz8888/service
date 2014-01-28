@@ -4,7 +4,7 @@ searchApp.config(function($routeProvider, $locationProvider) {
     $routeProvider.
     when('/search', {
         controller: 'SearchResultCtrl',
-        templateUrl: 'assets/search/result.html'
+        templateUrl: 'templates/search/result.html'
     })
 })
 

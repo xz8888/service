@@ -3,15 +3,15 @@ var ticketApp = angular.module('tickets', ['departments', 'users', 'ngRoute'])
 ticketApp.config(function($routeProvider, $locationProvider) {
     $routeProvider.
     when('/tickets/new', {
-        templateUrl: 'assets/tickets/new.html',
+        templateUrl: 'templates/tickets/new.html',
         controller: 'TicketNewCtrl'
     }).
     when('/tickets', {
-        templateUrl: 'assets/tickets/list.html',
+        templateUrl: 'templates/tickets/list.html',
         controller: 'TicketListCtrl'
     }).
     when('/tickets/:ticketId', {
-        templateUrl: 'assets/tickets/view.html',
+        templateUrl: 'templates/tickets/view.html',
         controller: 'TicketViewCtrl'
     })
 })
