@@ -20,6 +20,7 @@ angular.module('app').directive('onButton', function() {
             element.bootstrapSwitch();
             element.on('switch-change', function(e, data) {
                 scope.$apply(function() {
+                    console.log('are you there')
                     ctrl.$setViewValue(data.value);
                 })
 
